@@ -1,0 +1,159 @@
+body, html {
+    margin: .5rem;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.upper {
+    text-transform: uppercase;
+}
+.g-1 {
+    flex-grow: 1;
+}
+.w-10 {
+    width: 10%;
+}
+.w-15 {
+    width: 15%;
+}
+.w-20 {
+    width: 20%;
+}
+.w-25 {
+    width: 25%;
+}
+.w-30 {
+    width: 30%;
+}
+.w-33 {
+    width: 33.333%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-45 {
+    width: 45%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-70 {
+    width: 70%;
+}
+.w-80 {
+    width: 80%;
+}
+.h-100 {
+    height: 100%;
+}
+.h-50 {
+    height: 50%;
+}
+.p-1 {
+    padding: .4rem;
+}
+.p-2 {
+    padding: .8rem;
+}
+.mb-1 {
+    margin-bottom: .4rem;
+}
+.mb-2 {
+    margin-bottom: .9rem;
+}
+.mb-3 {
+    margin-bottom: 1.2rem;
+}
+.ml-1 {
+    margin-left: .4rem;
+}
+.mr-1 {
+    margin-right: .4rem;
+}
+.flex {
+    display:flex;
+}
+.stretch {
+    align-items: stretch;
+}
+.column {
+    flex-direction: column;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.strong {
+    font-weight: bold;
+}
+.block {
+    display: block;
+}
+.small {
+    font-size: .85rem;
+    /*line-height: 1.3rem;*/
+}
+.f-00 {
+    font-size: .45rem;
+}
+.f-0 {
+    font-size: .65rem;
+}
+.f-1 {
+    font-size: .7rem;
+}
+.f-2 {
+    font-size: 1.05rem;
+}
+.big {
+    font-size: 1.1rem;
+    /*line-height: 2rem;*/
+}
+.biger {
+    font-size: 1.2rem;
+   /* line-height: 2rem;*/
+}
+.border {
+    border: 1px solid #000;
+}
+.bb {
+    border-bottom: 1px solid #000;
+}
+.bg {
+    background-color: #e6e6e6;
+}
+.clean-table td {
+    border: 0 !important;
+}
+
+.form {
+    width: 350px;
+    background-color: #e0e0e0;
+    margin: 1rem auto;
+    border-radius: 5px;
+    padding: .5rem;
+}
+.form label {
+    font-size: .85rem;
+    display: block;
+}
+.form input, .form textarea {
+    width: 100%;
+    margin-bottom: .5rem;
+    padding: .3rem
+}
+.form button {
+    padding: .5rem 1rem;
+    background-color: dodgerblue;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    width: 100%;
+}

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fatura</title>
+    <script src="moment.min.js"></script>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="neoenergia.css">
+</head>
+<body>
+
+<div class="form">
+    <label for="nome">Nome</label>
+    <input id="nome" type="text" class="in-nome">
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf" class="in-cpf">
+    <label for="end-1">Endereço 1</label>
+    <textarea id="end-1" class="in-end-1"></textarea>
+    <label for="end-1">Endereço 2</label>
+    <textarea id="end-2" class="in-end-2"></textarea>
+    <label for="cep">CEP</label>
+    <input type="text" id="cep" class="in-cep">
+    <label for="mes">Mês</label>
+    <input type="text" id="mes" class="in-mes">
+    <label for="ano">Ano</label>
+    <input type="text" id="ano" class="in-ano">
+    <label for="Consumo">Consumo</label>
+    <input type="text" id="Consumo" class="in-consumo" value="117">
+    <button type="button" class="btn-gerar">GERAR</button>
+</div>
+
+<div class="neoenergia">
+    <div class="header">
+        <span class="g-1 text-center strong">NOTA FISCAL | FATURA | CONTA DE ENERGIA ELÉTRICA</span>
+        <span class="text-center">1/1</span>
+    </div>
+
+    <div class="header header-addr">
+        <div class="col w-30 f-1">
+            <span class="block strong">COMPANHIA DE ELETRICIDADE<br>DO ESTADO DA BAHIA</span>
+            <p>AV.EDGARD SANTOS, 300,<br>
+                CABULA VI, SALVADOR, BAHIA<br>
+                CEP 41181-900<br>
+                CNPJ 15.139.629/0001-94<br>
+                INSCRIÇÃO ESTADUAL 00478696NO</p>
+        </div>
+        <div class="logo w-20 text-center">
+            <img src="imgs/logo-neoenergia.png" alt="">
+        </div>
+        <div class="col g-1 f-0 text-right">
+            <span class="block strong text-right">Tarifa Social de Energia Elétrica - Lei 10.438, de 26/04/02<br>
+TELEATENDIMENTO: Emergencial 116 1 Comercial 0800 284 8080</span>
+            <span class="block">(Ligação gratuita de telefones fixos e móveis)</span>
+            <span class="block strong">Atendimento ao deficiente auditivo ou de fala: 0800 701 0155</span>
+            <span>Ouvidoria: 0800 071 7676<br>
+                Agência Nacional de Energia Elétrica - ANEEL 167<br>
+                (Ligação gratuita de telefones fixos e móveis)<br>
+                Site de serviços: www.clientescorporativos.neoenergiacoelba.com.br<br>
+                neoenergiacoelba.com.br </span>
+        </div>
+    </div>
+
+    <div class="flex mb-1">
+        <div class="w-40 flex column stretch f-1">
+            <div class="p-1 mb-1 border h-50">
+                <span class="block strong mb-1">DADOS DO CLIENTE</span>
+                <span class="block nome-cliente mb-1 upper">__nome-cliente__</span>
+                <span class="block">CPF: <span class="cpf-cliente">__cpf-cliente__</span></span>
+            </div>
+            <div class="p-1 mb-0 border h-50">
+                <span class="strong block mb-1">ENDEREÇO DA UNIDADE CONSUMIDORA</span>
+                <span class="block end-1 upper">__end-1__</span>
+                <span class="block end-2 upper">__end-2__</span>
+                <span class="block end-2 upper">__cep__</span>
+            </div>
+        </div>
+        <div class="w-60">
+            <div class="flex">
+                <div class="p-1 mb-1 ml-1 border w-40">
+                    <span class="strong block text-center small mb-1">DATA DE VENCIMENTO</span>
+                    <span class="strong block text-center biger mb-2 dt-vencimento">__dt-vencimento__</span>
+                    <span class="strong block text-center small mb-1">TOTAL A PAGAR (R$)</span>
+                    <span class="strong block text-center biger total">__total__</span>
+                </div>
+                <div class="p-1 mb-1 ml-1 border w-40">
+                    <span class="block f-0 strong mb-0 text-center">DATA DA EMISSÃO DA NOTA FISCAL</span>
+                    <span class="block strong mb-1 text-center dt-emissao">__dt-emissao__</span>
+                    <span class="block f-0 strong mb-0 text-center">DATA DA APRESENTAÇÃO</span>
+                    <span class="block strong mb-1 text-center dt-emissao">__dt-emissao__</span>
+                    <span class="block f-0 strong mb-0 text-center">NÚMERO DA NOTA FISCAL</span>
+                    <span class="block strong mb-1 text-center no-fiscal">__no-fiscal__</span>
+                </div>
+                <div class="p-1 mb-1 ml-1 border w-20">
+                    <span class="block strong f-00 mb-0 text-center">CONTA CONTRATO</span>
+                    <span class="block strong mb-1 text-center no-contrato">__no-contrato__</span>
+                    <span class="block strong f-00 mb-0 text-center">Nº DO CLIENTE</span>
+                    <span class="block mb-1 text-center no-cliente">__no-cliente__</span>
+                    <span class="block strong f-00 mb-0 text-center">Nº DA INSTALAÇÃO</span>
+                    <span class="block mb-1 text-center no-instalacao">__no-instalacao__</span>
+                </div>
+            </div>
+            <div class="block border p-1 text-center f-1 ml-1">
+                <span class="block strong">CLASSIFICAÇÃO</span>
+                <span class="block">B1 RESIDENCIAL - RESIDENCIA</span>
+                <span class="block">Conv. Monômia - Monofásico</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-1">
+        <div class="w-40 p-1 border f-00">
+            As condições gerais de fornecimento (Resolução ANEEL 414/2010), tarifas, produtos, serviços prestados e tributos se encontram à disposição, para consulta em nossas unidades de atendimento e no site neoenergiacoelba.com.br
+        </div>
+        <div class="w-60 p-1 ml-1 border text-center f-1">
+            <span class="block strong">RESERVADO AO FISCO</span>
+            <span class="block">CABB.EFDA.972E.F4AA.DF71.FD27.DDE6.7C6E</span>
+        </div>
+    </div>
+
+    <div class="border mb-1">
+        <div class="bg text-center strong f-1 p-1 bb">DESCRIÇÃO DA NOTA FISCAL</div>
+
+        <div class="flex">
+            <div class="w-50" style="padding-right: .4rem">
+                <table class="descricao mb-1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO (R$)</th>
+                        <th>VALOR (R$)</th>
+                    </tr>
+                    <tr>
+                        <td>Consumo Ativo(kWh)-TUSD</td>
+                        <td class="text-right">__total-consumo__</td>
+                        <td class="text-right">0.61213509</td>
+                        <td class="text-right">__total-tusd__</td>
+                    </tr>
+                    <tr>
+                        <td>Consumo Ativo(kWh)-TE</td>
+                        <td class="text-right">__total-consumo__</td>
+                        <td class="text-right">0.34771198</td>
+                        <td class="text-right">__total-te__</td>
+                    </tr>
+                    <tr>
+                        <td>Contrib. Ilum. Pública Municipal</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td class="text-right">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                <div class="mb-1 p-1 strong border flex f-1" style="border-left: 0">
+                    <span class="g-1">TOTAL DA FATURA</span>
+                    <span class="total">__total__</span>
+                </div>
+                <div class="border mb-1" style="border-right: 0; border-bottom: 0; border-left: 0">
+                    <div class="p-1 bg bb text-center f-1 strong" style="border-right: 1px solid #000;">INFORMAÇÕES DE TRIBUTOS</div>
+                    <table class="impostos" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th colspan="3">ICMS</th>
+                            <th colspan="3">PIS</th>
+                            <th colspan="3">COFINS</th>
+                        </tr>
+                        <tr class="f-00">
+                            <th>BASE DE<br>CÁLCULO</th>
+                            <th>%</th>
+                            <th>VALOR DO<br>IMPOSTO</th>
+                            <th>BASE DE<br>CÁLCULO</th>
+                            <th>%</th>
+                            <th>VALOR DO<br>IMPOSTO</th>
+                            <th>BASE DE<br>CÁLCULO</th>
+                            <th>%</th>
+                            <th>VALOR DO<br>IMPOSTO</th>
+                        </tr>
+                        <tr>
+                            <td class="base-icms">__total-sem-imposto__</td>
+                            <td>18%</td>
+                            <td class="valor-icms">__total-icms__</td>
+                            <td class="base-pis">92.08</td>
+                            <td>0.93%</td>
+                            <td class="valor-pis">__total-pis__</td>
+                            <td class="base-cofins">92.08</td>
+                            <td>4.27%</td>
+                            <td class="valor-cofins">__total-cofins__</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="w-50">
+                <div class="aviso p-1 mb-1 f-1">
+                    Este comunicado <strong>NÃO</strong> substitui aviso de débitos anteriores e <strong>NÃO</strong> contempla débitos em discussão judicial. Caso a suspensão do fornecimento persista por dois ciclos de faturamento, poderá ocorrer o encerramento do contrato, podendo também existir cobrança conforme os critérios definidos no Art. 99 REN 414/Aneel. Podem ocorrer ações de cobrança, bem como inclusão nos registros de restrições de crédito SPC e SERASA.
+                </div>
+
+                <div class="flex">
+                    <div class="w-80">
+                        <div class="border p-1 mb-1 mr-1 f-0">
+                            <span class="block text-center strong">Tarifas Aplicadas</span>
+                            <table class="clean-table">
+                                <tr>
+                                    <td width="80%">Consumo Ativo(kWh)-TUSD</td>
+                                    <td class="text-right">0.47598125</td>
+                                </tr>
+                                <tr>
+                                    <td>Consumo Ativo(kWh)-TE</td>
+                                    <td class="text-right">0.27036156</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="border p-1 mb-1 mr-1 f-0">
+                            <span class="block text-center strong">COMPOSIÇÃO DO CONSUMO</span>
+                            <table class="clean-table">
+                                <tr>
+                                    <td width="50%">Geração de Energia</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;27.29</td>
+                                    <td width="35%" class="text-right">24.30%</td>
+                                </tr>
+                                <tr>
+                                    <td width="50%">Transmissão</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;6.23</td>
+                                    <td width="35%" class="text-right">5.55%</td>
+                                </tr>
+                                <tr>
+                                    <td width="50%">Distribuição (Coelba)</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;36.08</td>
+                                    <td width="35%" class="text-right">32.14%</td>
+                                </tr>
+                                <!--<tr>
+                                    <td width="50%">Perdas de Energia</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;6.86</td>
+                                    <td width="35%" class="text-right">6.11%</td>
+                                </tr>
+                                <tr>
+                                    <td width="50%">Encargos Setoriais</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;10.84</td>
+                                    <td width="35%" class="text-right">9.65%</td>
+                                </tr>-->
+                                <tr>
+                                    <td width="50%">Tributos</td>
+                                    <td width="35%" class="text-right">R$&nbsp;&nbsp;24.99</td>
+                                    <td width="35%" class="text-right">22.25%</td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" class="strong">Total</td>
+                                    <td width="35%" class="text-right strong">R$&nbsp;&nbsp;__total-sem-imposto__</td>
+                                    <td width="35%" class="text-right strong">100%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="w-40 border p-1 f-0" style="border-right: 0; border-bottom: 0;">
+                        <span class="block strong text-center">HISTÓRICO DO CONSUMO</span>
+                        __historico__
+                        <!--<table class="clean-table" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td colspan="3" class="text-right">kWh</td>
+                            </tr>
+                            __historico__
+                            &lt;!&ndash;<tr class="f-00">
+                                <td style="width: 30%">AGO 22</td>
+                                <td style="border-left: 1px solid #000 !important; vertical-align: middle; padding-left: 0;">
+                                    <div class="bar bg" style="width: 35%"></div>
+                                </td>
+                                <td style="width: 10%" class="text-right">117</td>
+                            </tr>
+                            <tr class="f-00">
+                                <td style="width: 30%">JUL 22</td>
+                                <td style="border-left: 1px solid #000 !important; vertical-align: middle; padding-left: 0;">
+                                    <div class="bar bg" style="width: 25%"></div>
+                                </td>
+                                <td style="width: 10%" class="text-right">110</td>
+                            </tr>&ndash;&gt;
+                        </table>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-1">
+        <div class="w-60 border" style="border-right: 0; border-bottom: 0;">
+            <div class="bg text-center strong p-1 bb f-1" style="border-right: 1px solid #000">DEMONSTRATIVO DE CONSUMO DESTA NOTA FISCAL</div>
+            <table class="impostos f-0" cellspacing="0" cellpadding="0">
+                <tr class="f-00">
+                    <th rowspan="2">NÚMERO DO<br>MEDIDOR</th>
+                    <th rowspan="2">TIPO DA<br>FUNÇÃO</th>
+                    <th colspan="2">ANTERIOR</th>
+                    <!--<th>DATA1</th>
+                    <th>LEITURA1</th>-->
+                    <th colspan="2">ATUAL</th>
+                    <!--<th>DATA2</th>
+                    <th>LEITURA2</th>-->
+                    <th rowspan="2">Nº<br>DIAS</th>
+                    <th rowspan="2">CONSTANTE</th>
+                    <th rowspan="2">AJUSTE</th>
+                    <th rowspan="2">CONSUMO<br>(kWh)</th>
+                </tr>
+                <tr class="f-00">
+                    <th>DATA</th>
+                    <th>LEITURA</th>
+                    <th>DATA</th>
+                    <th>LEITURA</th>
+                </tr>
+                <tr>
+                    <td>1216782360</td>
+                    <td>CAT</td>
+                    <td>__menos-2-meses__</td>
+                    <td>404.00</td>
+                    <td>__menos-1-mes__</td>
+                    <td>521.00</td>
+                    <td>32</td>
+                    <td>1.000000</td>
+                    <td>&nbsp;</td>
+                    <td>__total-consumo__</td>
+                </tr>
+                <tr>
+                    <td colspan="10" class="f-1" style="border-top: 1px solid #000; padding: 1.1rem">DATA PREVISTA DA PRÓXIMA LEITURA: __dt-proxima__</td>
+                </tr>
+            </table>
+        </div>
+        <!--<div class="w-40 ml-1 border" style="border-right: 0; border-bottom: 0;">
+            <div class="bg text-center strong p-1 bb f-0" style="border-right: 1px solid #000">DURAÇÃO E FREQUÊNCIA DAS INTERRUPÇÕES</div>
+            <table class="impostos f-0" cellspacing="0" cellpadding="0">
+                <tr class="f-00">
+                    <th>DESCRIÇÃO</th>
+                    <th>CONJUNTO</th>
+                    <th>VALOR<br>APURADO</th>
+                    <th>LIMITE<br>MENSAL</th>
+                    <th>LIMITE<br>TRIM.</th>
+                    <th>LIMITE<br>ANUAL</th>
+                </tr>
+                <tr>
+                    <td>DIC-Nº de horas sem Energia</td>
+                    <td></td>
+                    <td>0.0000</td>
+                    <td>4.71</td>
+                    <td>9.43</td>
+                    <td>18.86</td>
+                </tr>
+                <tr>
+                    <td>FIC-Nº de vezes sem Energia</td>
+                    <td></td>
+                    <td>0.0000</td>
+                    <td>2.98</td>
+                    <td>5.97</td>
+                    <td>11.95</td>
+                </tr>
+                <tr>
+                    <td>DMIC-Duração máxima de interrupção contínua</td>
+                    <td></td>
+                    <td>0.0000</td>
+                    <td>2.60</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>DICRI-Duração de interrupção em dia crítico</td>
+                    <td></td>
+                    <td colspan="4" style="border-top: 1px solid #000">Limite DICRI: 12.22</td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="border-top: 1px solid #000">EUSD-Valor do Encargo de uso do sistema de distribuição = R$ 55.68</td>
+                </tr>
+            </table>
+        </div>-->
+        <div class="w-40 ml-1 border" style="border-right: 0; border-bottom: 0;">
+            <div class="bg text-center strong p-1 bb f-1" style="border-right: 1px solid #000">NÍVEIS DE TENSÃO</div>
+            <table class="impostos" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th rowspan="2">TENSÃO NORMAL (V)</th>
+                    <th colspan="2" style="padding: 12px">LIMITE DE VARIAÇÃO (V)</th>
+                </tr>
+                <tr>
+                    <th style="padding: 12px">MÍNIMO</th>
+                    <th style="padding: 12px">MÁXIMO</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-size: .95rem">127</td>
+                    <td style="text-align: center; font-size: .95rem">117</td>
+                    <td style="text-align: center; font-size: .95rem">133</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex mb-1">
+        <div class="w-80 border p-1 f-00">
+            <span class="block strong">INFORMAÇÕES IMPORTANTES</span>
+            <p style="margin-bottom: 0">Na data da leitura a bandeira em vigor é a Verde. Mais informações em www.aneel.gov.br. <br>
+                A partir de 13/07, tarifa com reajuste médio de -0,50%, REH N° 3.056/22.<br>
+                O cliente é compensado quando há violação na continuidade individual ou do nível de tensão de fornecimento. Sua rota/ciclo de leitura será alterado. Art. 84 Ren. ANEEL 414/10<br>
+                Pagto. em atraso gera multa 2%(Res414/ANEEL), Juros 1%a.m(Lei 10.438/02) e atualização monetária no próx. mês O Cliente é compensado quando há descumprimento do prazo definido para os padrões de atendimento comercial. Em caso de suspensão de fornecimento, o encerramento do contrato poderá ocorrer após 2 ciclos de faturamento, podendo também ser cobrado o custo de disponibilidade no ciclo em que ocorrer a suspensão.<br>
+                Acréscimos legais serão aplicados sobre a COSIP paga em atraso, conforme Legislaçao Municipal.<br>
+                www.neoenergiacoelba.com.br/Poder Público/Contribuição de Iluminação Pública.
+            </p>
+        </div>
+        <div class="w-20 ml-1">
+            <div class="border p-1" style="height: 100px">
+                <span class="block strong f-0">AUTENTICAÇÃO MECÂNICA</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="corte mb-1"></div>
+
+    <div class="flex mb-1">
+        <div class="w-70 mr-1">
+            <strong class="block mb-1 f-1">DESTAQUE AQUI</strong>
+            <div class="flex mb-1">
+                <div class="w-25 p-2 border mr-1">
+                    <span class="block f-1 strong">CONTA CONTRATO</span>
+                    <span class="text-center block small no-contrato">__no-contrato__</span>
+                </div>
+                <div class="w-25 p-2 border mr-1">
+                    <span class="block f-1 strong">MÊS/ANO</span>
+                    <span class="text-center block small">
+                        <span class="mes">__mes__</span>/<span class="ano">__ano__</span>
+                    </span>
+                </div>
+                <div class="w-25 p-2 border mr-1">
+                    <span class="block f-1 strong">TOTAL A PAGAR(R$)</span>
+                    <span class="text-center block small total">__total__</span>
+                </div>
+                <div class="w-25 p-2 border">
+                    <span class="block f-1 strong">VENCIMENTO</span>
+                    <span class="text-center block small dt-vencimento">__dt-vencimento__</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="imgs/barcode.png" style="width: 80%">
+            </div>
+        </div>
+        <div class="w-30">
+            <strong class="block mb-1 f-1">&nbsp;</strong>
+            <div class="border ml-1 mb-1 p-1">
+                <span class="block f-1 strong mb-1">TALÃO DE PAGAMANTO</span>
+                <div class="strong small" style="padding-left: 1.2rem">
+                    Evite dobrar, perfurar ou rasurar.<br>
+                    Este canhoto será usado em leitora ótica.
+                </div>
+            </div>
+            <div class="border p-1 ml-1" style="height: 70px">
+                <span class="block strong f-0">AUTENTICAÇÃO MECÂNICA</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

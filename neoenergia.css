@@ -1,0 +1,75 @@
+body, html {
+    font-family: Arial, Helvetica;
+    font-size: 16px;
+}
+.neoenergia {
+    width: 100%;
+    max-width: 2199px;
+    margin: 0 auto;
+    display: none;
+}
+.header {
+    display: flex;
+    padding: .5rem;
+    border: 1px solid #000;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+/*.header span {
+    display: inline-block;
+}*/
+.header-addr {
+    align-items: flex-start;
+}
+.header-addr .logo img {
+    width: 120px;
+    margin-top: 1rem;
+}
+table {
+    width: 100%;
+}
+.descricao, .impostos {
+    font-size: .6rem;
+}
+table th {
+    padding: 4px;
+    border-bottom: 1px solid #000;
+}
+table td {
+    padding: 3px;
+}
+.impostos th {
+    padding: 3px 0;
+}
+.descricao td:first-child, .impostos td:first-child {
+    text-align: left;
+}
+table th, table td {
+    border-right: 1px solid #000;
+}
+.descricao th, .impostos td {
+    text-align: right;
+}
+table tr:last-child td {
+    border-bottom: 1px solid #000;
+}
+.descricao tr:last-child td {
+    border-bottom: 1px solid #000;
+    height: 95px;
+    vertical-align: top;
+}
+.aviso {
+    /*padding-top: 100px;
+    padding-bottom: 50px;*/
+    padding-right: 35px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.bar {
+    border: 1px solid #c0c0c0;
+    border-left: 0;
+    height: 10px;
+}
+.corte {
+    border-top: 2px dashed #000;
+}
