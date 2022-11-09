@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "ghpages": "rm -rf docs && npm run build && mv dist docs && cp docs/index.html docs/404.html",
+    "ghpages": "rm -rf docs && npm run build && mv dist docs && cp docs/index.html docs/404.html && git add . && git commit -m gh-pages",
     "preview": "vite preview"
   },
   "dependencies": {
